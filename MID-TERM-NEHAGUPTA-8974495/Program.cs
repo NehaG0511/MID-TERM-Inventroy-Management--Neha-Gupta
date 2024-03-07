@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 
 public class InventoryItem
 {
@@ -54,14 +54,14 @@ public class InventoryItem
     // Check if an item is in stock
     public bool IsInStock() 
 
-    { return QuantityInStock >= 0; }  // TODO: Return true if the item is in stock (quantity > 0), otherwise false.
+    { return QuantityInStock > 0; }  // TODO: Return true if the item is in stock (quantity > 0), otherwise false.
    
     // Print item details 
     public void PrintDetails() // TODO: Print the details of the item (name, id, price, and stock quantity).
-    { Console.WriteLine($"\n itemname: {ItemName}");
-      Console.WriteLine($"\n itemID: {ItemId}");
-      Console.WriteLine($" \n price: {Price}");
-      Console.WriteLine($"\n quantityInStock: {QuantityInStock}");
+    { Console.WriteLine($" itemname: {ItemName}");
+      Console.WriteLine($" itemID: {ItemId}");
+      Console.WriteLine($" price: {Price}");
+      Console.WriteLine($" quantityInStock: {QuantityInStock}");
 
     }
    
@@ -82,7 +82,7 @@ class Program
         item2.PrintDetails();
 
         // 2. Sell some items and then print the updated details.
-        Console.WriteLine("\n 10 Smartphones got sold");
+        Console.WriteLine(" \n 10 Smartphones got sold");
         item2.SellItem(10);
         Console.WriteLine("\n Item's details updated");
         item2.PrintDetails();
@@ -106,7 +106,7 @@ class Program
 
 
         // 4. Check if an item is in stock and print a message accordingly.
-        Console.WriteLine("\n Verify if the ITEM1 - Laptop is in stock OR not ");
+        Console.WriteLine($"\n Check Whether {item1.ItemName} in stock? {item1.IsInStock()}");
         if (item1.IsInStock())
         {
             Console.WriteLine("Perfect! Laptop is in stock and available.");
@@ -116,10 +116,11 @@ class Program
             Console.WriteLine("Oops! Laptop is not in stock and unavialable.");
         }
 
-        Console.WriteLine("\n \n Verify if the ITEM2 - Smartphone is in stock OR not ");
+
+        Console.WriteLine($"\n Check Wether {item2.ItemName} in stock? {item1.IsInStock()}");
         if (item2.IsInStock())
         {
-            Console.WriteLine("Perfect! Smartphone is in stock and available.");
+            Console.WriteLine("Yes,Perfect! Smartphone is in stock and available.");
         }
         else
         {
